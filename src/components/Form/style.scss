@@ -1,0 +1,143 @@
+.form {
+    position: relative;
+    z-index: 1;
+    left: 110px;
+    //top: 40px;
+    border-radius: 25px;
+    background-color: #ececec;
+    width: 540px;
+    height: 500px;
+    box-shadow: 3px 0px 43px -6px;
+    padding: 2px 15px 15px 15px;
+
+
+    &__containers {
+        display: grid;
+        grid-auto-columns: auto;
+        gap: 20px 30px;
+    }
+
+    & h2 {
+        font-size: 32px;
+        margin: 10px 5px 10px 5px;
+    }
+
+    & h3 {
+        font-size: 20px;
+    }
+
+    & h5 {
+        color: #838383;
+        font-weight: 200;
+        margin: 10px 5px 10px 5px;
+    }
+
+    & p {
+        color: #9e9e9e;
+    }
+
+    &__typeTravel-container {
+        width: 230px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        & button {
+            border: none;
+            height: 75%;
+            border-radius: 4px;
+
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(226, 43, 165);
+                color: #fff;
+            }
+        }
+    }
+
+    &__origin {
+        width: 100%;
+        height: 85px;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        grid-column: 1;
+
+        & h3 {
+            font-size: 23px;
+
+        }
+    }
+
+    &__destination {
+        grid-column: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    &__going-date {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 55px;
+        width: 100%;
+    }
+
+    &__arrival-date {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        height: 55px;
+        width: 98%;
+    }
+
+    &__passengers {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px;
+        width: 95%;
+    }
+
+    &__discount-cupon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    &__flys-btns  {
+        width: 100%;
+        height: 50px;
+        margin-top: 15px;
+        border-radius: 30px;
+        color: #fff;
+        background-color: #f55aec;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        border: none;
+    }
+}
+
+// .active {
+//     border: 2px solid rgb(196, 14, 14);
+// }
+
+.box-border {
+    border: 2px solid #9e9e9e;
+    background-color: #fff;
+    border-radius: 5px;
+}

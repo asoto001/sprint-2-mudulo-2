@@ -1,0 +1,47 @@
+.img {
+    width: 750px;
+    height: 580px;
+    border-radius: 15px;
+    position: relative;
+    right: 35px;
+    top: 15px;
+}
+
+
+
+.navbar-sec {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+
+    &__fly {
+        background-image: url('https://media.ambito.com/p/b3632b8baf59f7eed42f59662906bef0/adjuntos/239/imagenes/036/930/0036930351/1200x675/smart/turismo-avion-viajesjpg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        height: 595px;
+        width: 715px;
+        border-radius: 20px;
+
+        @media (max-width: 1200px) {
+            height: 595px;
+            width: 415px;
+        }
+
+        @media (max-width: 1000px) {
+            display: none;
+        }
+    }
+
+    &__form-container {
+        @media (max-width: 1000px) {
+            background-image: url('https://media.ambito.com/p/b3632b8baf59f7eed42f59662906bef0/adjuntos/239/imagenes/036/930/0036930351/1200x675/smart/turismo-avion-viajesjpg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right;
+            height: 595px;
+            width: 825px;
+            border-radius: 20px;
+        }
+    }
+}

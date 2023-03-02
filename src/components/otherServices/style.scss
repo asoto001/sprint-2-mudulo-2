@@ -1,0 +1,59 @@
+.others {
+
+    & h2 {
+        margin-top: 90px;
+        margin-left: 105px;
+        font-size: 35px;
+        @media (max-width: 700px) {
+            margin-left: 50px;
+            font-size: 25px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 95%;
+        align-items: center;
+        margin-left: 35px;
+        margin-bottom: 35px;
+
+        @media (max-width: 700px) {
+            flex-direction: column;
+            margin: 0px;
+        }
+    }
+
+
+    &__div {
+        display: flex;
+        flex-direction: column;
+        width: 15%;
+        height: 265px;
+        align-items: center;
+        padding: 25px 15px 15px 15px;
+        gap: 10px;
+        text-align: center;
+        margin-top: 25px;
+        box-shadow: 4px 0px 25px -12px;
+        border-radius: 15px;
+
+        & button {
+            height: 95px;
+            width: 95px;
+            border-radius: 60px;
+            border: none;
+            background-color: rgb(226, 43, 165);
+
+            & img {
+                width: 50px;
+                fill: #fff;
+            }
+        }
+
+        @media (max-width: 700px) {
+            width: 70%;
+        }
+    }
+}
