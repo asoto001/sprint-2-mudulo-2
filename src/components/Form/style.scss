@@ -10,11 +10,25 @@
     box-shadow: 3px 0px 43px -6px;
     padding: 2px 15px 15px 15px;
 
+    @media (max-width: 690px) {
+        left: 20px
+    }
+
+    @media (max-width: 600px) {
+        height: 805px;
+        width: 295px
+    }
+
 
     &__containers {
         display: grid;
         grid-auto-columns: auto;
         gap: 20px 30px;
+
+        @media (max-width: 600px) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     & h2 {
@@ -117,7 +131,7 @@
 
     }
 
-    &__flys-btns  {
+    &__flys-btns {
         width: 100%;
         height: 50px;
         margin-top: 15px;
