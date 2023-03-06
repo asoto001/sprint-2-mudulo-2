@@ -5,20 +5,23 @@
     //top: 40px;
     border-radius: 25px;
     background-color: #ececec;
-    width: 540px;
-    height: 500px;
+    width: 550px;
+    height: 510px;
     box-shadow: 3px 0px 43px -6px;
     padding: 2px 15px 15px 15px;
-
     @media (max-width: 690px) {
         left: 20px
     }
-
     @media (max-width: 600px) {
         height: 805px;
         width: 295px
     }
 
+ & a{
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+ }
 
     &__containers {
         display: grid;
@@ -84,7 +87,9 @@
 
         & h3 {
             font-size: 23px;
-
+        }
+        &:hover{
+            cursor: pointer;
         }
     }
 
@@ -95,6 +100,9 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+        &:hover{
+            cursor: pointer;
+        }
     }
 
     &__going-date {
