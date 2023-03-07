@@ -8,6 +8,8 @@ import calendar from '../assets/img/icons/calendar.svg';
 import arrowDown from '../assets/img/icons/chevron-down.svg';
 import miniAirplane from '../assets/img/icons/plane.svg';
 import Destination from "./destination/Destination";
+import DatesModalContainer from "./datesModalContainer/DatesModalContainer";
+import Seats from "./seats/Seats";
 
 export const FormContext = createContext({})
 
@@ -27,14 +29,15 @@ const Form = () => {
     ] = useState(false);
 
     const [
-        modalDates,
-        setModalDates
+        modalDatesContainer,
+        setModalDatesContainer
     ] = useState(false)
 
     const [
-        seating,
-        setSeating
+        modalSeats,
+        setModalSeats
     ] = useState(false);
+
     const [
         validate,
         setValidate
@@ -54,10 +57,6 @@ const Form = () => {
         setData
     ] = useState([])
 
-    const origin = watch('origin');
-    const destiny = watch('destination');
-    const fecha = watch('out');
-
     const typeTravel = [
         {
             id: 1,
@@ -76,8 +75,7 @@ const Form = () => {
         destination: '',
         dateOut: '',
         returnDate: '',
-        seating: '',
-        //code: '',
+        seats: '',
         type: type
     })
 
@@ -102,15 +100,15 @@ const Form = () => {
 
     const showOrigin = () => { setModalOrigin(!modalOrigin) }
     const showDestination = () => { setModalDestination(!modalDestination) }
-    const showDates = () => { setModalDates(!modalDates) }
-    const showseating = () => { setSeating(!seating) }
+    const showDatesContainer = () => { setModalDatesContainer(!modalDatesContainer) }
+    const showModalSeats = () => { setModalSeats(!modalSeats) }
 
     const changeFormData = (object) => {
         setFormData({ ...formData, [object.name]: object.value })
     }
 
     const validation = () => {
-        if (formData.origin && formData.destination && formData.dateOut && formData.returnDate && formData.seating) {
+        if (formData.origin && formData.destination && formData.dateOut  && formData.seats) {
             setValidate(true)
         }
     }
@@ -139,9 +137,11 @@ const Form = () => {
 
     return (
         <FormContext.Provider value={
-            { modalOrigin, showOrigin, changeFormData, showDestination, modalDestination, modalDates, showDates, showseating, seating, formData, data }}>
+            { modalOrigin, showOrigin, changeFormData, showDestination, modalDestination, modalDatesContainer, showDatesContainer, showModalSeats, modalSeats, formData, data }}>
                 <Origin countries={data}/>
                 <Destination countries={data}/>
+                <DatesModalContainer/>
+                <Seats/>
                 
             <form className='form' onSubmit={handleSubmit(onSubmit)}>
                 <h2>Busca un nuevo destino y comienza la aventura.</h2>
@@ -164,26 +164,26 @@ const Form = () => {
                         <h3>{formData.destination ? formData.destination : '---'}</h3>
                         <p>Seleccione un destino</p>
                     </div>
-                    <div className='form__going-date box-border'
-                        onClick={() => setModalDates(true)}>
+                    <div className='form__date-out box-border'
+                        onClick={() => setModalDatesContainer(true)}>
                         <img src={calendar} alt="date" />
                         <div>
                             <p>Salida</p>
-                            <h3>{formData.dateOut ? formData.dateOut : 'mar, 30 nov, 2023'}</h3>
+                            <h3>{formData.dateOut ? formData.dateOut : '30 nov, 2023'}</h3>
                         </div>
                     </div>
-                    <div className='form__arrival-date box-border'
-                        onClick={() => setModalDates(true)}>
+                    <div className='form__return-date box-border'
+                        onClick={() => setModalDatesContainer(true)}>
                         <img src={calendar} alt="date" />
                         <div>
                             <p>Regreso</p>
-                            <h3>{formData.dateOut ? formData.returnDate : 'mar, 31 dic, 2023'}</h3>
+                            <h3>{formData.dateOut ? formData.returnDate : '31 dic, 2023'}</h3>
                         </div>
                     </div>
-                    <div className='form__seating box-border' onClick={() => { setSeating(true) }}>
+                    <div className='form__seats box-border' onClick={() => { setModalSeats(true) }}>
                         <div>
                             <p>Pasajeros</p>
-                            <h3>{formData.seating ? formData.seating : 'Indique la cantidad'}</h3>
+                            <h3>{formData.seats ? formData.seats : 'Indique la cantidad'}</h3>
                         </div>
                         <img src={arrowDown} alt="arrow" />
                     </div>
@@ -194,8 +194,8 @@ const Form = () => {
                 </section>
                 <button
                     className="form__flys-btns" type="submit">
-                        <img src={miniAirplane} alt="date" />
-                    <Link to={`${validate ? 'selectFlight/flight' : ''}`}>
+                        <img src={miniAirplane} alt="plane" />
+                    <Link to={`${validate ? 'selectFlight/' : ''}`}>
                          Buscar vuelos</Link>
                 </button>
             </form>

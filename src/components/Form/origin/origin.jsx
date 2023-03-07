@@ -13,7 +13,7 @@ const Origin = ({ countries }) => {
 
     const handleClick = ({ target }) => { setOption(target.value) }
 
-    const confirm = () => {
+    const verify = () => {
         changeFormData({ name: 'origin', value: option })
         showOrigin()
     }
@@ -45,7 +45,7 @@ const Origin = ({ countries }) => {
                             ))}
                         </>}
                     </select>
-                    <button onClick={confirm}>Confirm</button>
+                    <button onClick={verify}>Confirm</button>
                 </section>
 
             </article>
