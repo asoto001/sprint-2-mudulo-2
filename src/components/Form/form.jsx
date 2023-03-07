@@ -195,7 +195,7 @@ const Form = () => {
                 <button
                     className="form__flys-btns" type="submit">
                         <img src={miniAirplane} alt="plane" />
-                    <Link to={`${validate ? 'selectFlight/' : ''}`}>
+                    <Link to={`${validate ? 'selectFlight' : ''}`}>
                          Buscar vuelos</Link>
                 </button>
             </form>
